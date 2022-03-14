@@ -1,12 +1,12 @@
-import React from "react";
-import logo from "assets/logo.svg"
+import React, { useEffect, useState } from "react";
+import logo from "assets/sprites/logo.svg"
 import Bar from "components/SearchBar/Bar.jsx";
 import Card from "components/Card/Card";
 import "./Home.scss";
 
-const Home = () => {
+const Home = ({ cards }) => {
   const filter = ["Новинки", "Хит", "Крепкие", "Сладкие", "Лонг", "Шот"]
-
+  
   return (
     <div>
       <header className="header">
@@ -27,16 +27,8 @@ const Home = () => {
       </header>
       <main className="main">
         <div className="main__drink-cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {cards.map(data => (
+            <Card card={data} />))}
         </div>
       </main>
       <footer className="footer">

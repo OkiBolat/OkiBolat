@@ -54,19 +54,26 @@
     }
 
     button {
-      color: #C4C1CF;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 17px;
+      padding: 16px 24px;
       cursor: pointer;
-      border: none;
-      height: 48px;
+      border: 1px solid transparent;
       background: #44414E;
       border-radius: 32px;
       transition: 0.2s;
+      // font-family: 'Roboto';
+      font-size: 18px;
+      line-height: 17px;
+      color: #C4C1CF;
+      
 
       &:hover {
-        box-shadow: 0 0 5px 0.2px #C4C1CF;
+        color: #E9E6F2;
+      }
+
+      &:active {
+        color: #FF005C;
+        background: #120E20;
+        border-color: #FF005C;
       }
     }
   }

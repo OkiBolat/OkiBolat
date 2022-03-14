@@ -20,7 +20,6 @@ const Bar = () => {
             <button className="bar__button">Избранное</button>
             <img onClick={() => setIsSearchOpen(true)} src={searchBtn} alt="" />
           </div>
-
         </div>
       }
     </div>
