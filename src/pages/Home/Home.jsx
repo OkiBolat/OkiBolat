@@ -1,12 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import logo from "assets/sprites/logo.svg"
 import Bar from "components/SearchBar/Bar.jsx";
 import Card from "components/Card/Card";
 import "./Home.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { getCardsThunk } from "store/Home/actionCreators";
+import { cardsSelector } from "store/Home/selectors";
 
-const Home = ({ cards }) => {
+const Home = () => {
   const filter = ["Новинки", "Хит", "Крепкие", "Сладкие", "Лонг", "Шот"]
   
+  const dispatch = useDispatch()
+
+  const cards = useSelector(cardsSelector)
+
+  useEffect(() => {
+    dispatch(getCardsThunk())
+  }, [dispatch])
+
   return (
     <div>
       <header className="header">

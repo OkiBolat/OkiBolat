@@ -1,0 +1,30 @@
+.detaile {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // align-items: flex-end;
+  // justify-content: flex-end;
+  &__image {
+    height: 400px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-repeat:no-repeat;
+    background-size: cover;
+
+
+  }
+  &__info {
+    z-index: 1;
+    width: 100%;
+    background-color: #0E0D13;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    align-content: flex-end;
+  }
+}
