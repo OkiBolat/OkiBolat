@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import "./Home.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { getCardsThunk } from "store/Home/actionCreators";
-import { cardsSelector } from "store/Home/selectors";
+import BottomNav from "components/BottomNav/BottomNav";
 import CardsList from "components/CardsList/CardsList";
 import Header from "components/Header/Header";
-import BottomNav from "../../components/BottomNav/BottomNav.jsx";
+import "./Search.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { cardsSelector } from "store/Home/selectors";
+import { getCardsThunk } from "store/Home/actionCreators";
 
-const Home = () => {
+const Search = () => {
   const filter = ["Новинки", "Хит", "Крепкие", "Сладкие", "Лонг", "Шот"]
 
   const dispatch = useDispatch()
@@ -17,14 +17,12 @@ const Home = () => {
   useEffect(() => {
     dispatch(getCardsThunk())
   }, [dispatch])
-
   return (
     <>
-      <Header title="Главная" tabs={filter} />
+      <Header tabs={filter} title="Поиск" />
       <CardsList cards={cards} />
-      <BottomNav btnCaption="Избранное" />
+      <BottomNav btnCaption="Назад" />
     </>
   )
 }
-
-export default Home;
+export default Search;

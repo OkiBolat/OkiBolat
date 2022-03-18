@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import searchBtn from "assets/sprites/searchBtn.svg"
 import closeBtn from "assets/sprites/closeBtn.svg"
-import "./Bar.scss"
-const Bar = () => {
+import "./BottomNav.scss"
+const BottomNav = ({ btnCaption }) => {
   const [isSearchOpern, setIsSearchOpen] = useState(false)
 
   return (
-    <div className="bar">
+    <footer className="bar">
       {isSearchOpern ?
         <div className="bar__search-box">
           <div className="bar__search-box-input">
@@ -17,13 +17,13 @@ const Bar = () => {
         :
         <div className="bar__search-box">
           <div className="bar__search-box-button">
-            <button className="bar__button">Избранное</button>
+            <button className="bar__button">{btnCaption}</button>
             <img onClick={() => setIsSearchOpen(true)} src={searchBtn} alt="" />
           </div>
         </div>
       }
-    </div>
+    </footer>
   )
 }
 
-export default Bar;
+export default BottomNav;
