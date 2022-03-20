@@ -4,14 +4,14 @@ import Header from "components/Header/Header";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCardsThunk } from "store/Home/actionCreators";
-import { cardsSelector } from "store/Home/selectors";
+import {favoritesCardsSelector } from "store/Home/selectors";
 
 const Favorites = () => {
   const filter = ["Новинки", "Хит", "Крепкие", "Сладкие", "Лонг", "Шот"]
 
   const dispatch = useDispatch()
 
-  const cards = useSelector(cardsSelector)
+  const cards = useSelector(favoritesCardsSelector)
 
   useEffect(() => {
     dispatch(getCardsThunk())
@@ -20,7 +20,7 @@ const Favorites = () => {
     <>
     <Header  tabs={filter} title="Избранное" />
     <CardsList cards={cards} />
-    <BottomNav btnCaption="Назад" />
+    <BottomNav btnOptions="" btnCaption="Назад" />
     </>
   )
 }

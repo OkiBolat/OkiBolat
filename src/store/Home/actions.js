@@ -1,3 +1,3 @@
 export const GET_CARDS = "GET_CARDS";
-export const ADD_CARD = "ADD_CARD"
-export const REMOVE_CARD = "REMOVE_CARD"
+export const SWITCH_CARD_FAVORITE = "SWITCH_CARD_FAVORITE";
+export const SEARCH_CARD = "SEARCH_CARD";

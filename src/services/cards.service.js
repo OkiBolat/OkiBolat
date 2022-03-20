@@ -4,16 +4,12 @@ const getCards = () => {
   return instance("items")
 }
 
-const addCard = (data) => {
-  return instance.post("items", data.id)
+const favoritesSwitch = (data) => {
+  return instance.put(`items/${data.id}` , data)
 }
 
-const deleteCard = (id) => {
-  return instance.delete("cards/" + id )
-}
 
 export const cardsService = {
   getCards,
-  addCard,
-  deleteCard
+  favoritesSwitch,
 }

@@ -1,25 +1,35 @@
 import { cardsService } from "services/cards.service";
-import { ADD_CARD, REMOVE_CARD, GET_CARDS} from "./actions";
+import { GET_CARDS, SEARCH_CARD, SWITCH_CARD_FAVORITE} from "./actions";
 
 export const getCards = (payload) => ({
   type: GET_CARDS,
   payload
 });
 
-export const addToFavorite = (payload) => ({
-  type: ADD_CARD,
+export const switchCardFavorite = (payload) => ({
+  type: SWITCH_CARD_FAVORITE,
   payload
 });
 
-export const deleteFromFavorite = (payload) => ({
-  type: REMOVE_CARD,
+
+export const searchCard = (payload) => ({
+  type: SEARCH_CARD,
   payload
-});
+})
+
 
 export const getCardsThunk = () => {
   return (dispatch) => {
     cardsService.getCards().then(res => {
       dispatch(getCards(res.data))
+    })
+  }
+}
+
+export const switchCardFavoriteThunk = (data) => {
+  return (dispatch) => {
+    cardsService.favoritesSwitch({...data, isFavorite: !data.isFavorite}).then(res => {
+      dispatch(switchCardFavorite(data))
     })
   }
 }

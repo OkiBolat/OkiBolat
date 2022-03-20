@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import BottomNav from "components/BottomNav/BottomNav";
 import CardsList from "components/CardsList/CardsList";
 import Header from "components/Header/Header";
@@ -10,6 +10,8 @@ import { getCardsThunk } from "store/Home/actionCreators";
 const Search = () => {
   const filter = ["Новинки", "Хит", "Крепкие", "Сладкие", "Лонг", "Шот"]
 
+  const [searchValue, setSearchValue] = useState('')
+
   const dispatch = useDispatch()
 
   const cards = useSelector(cardsSelector)
@@ -17,11 +19,22 @@ const Search = () => {
   useEffect(() => {
     dispatch(getCardsThunk())
   }, [dispatch])
+
+  const filteredCards = useMemo(() => cards.filter(item => item.name.toLowerCase()
+    .includes(searchValue
+      .toLowerCase())),
+    [cards, searchValue])
+
   return (
     <>
       <Header tabs={filter} title="Поиск" />
-      <CardsList cards={cards} />
-      <BottomNav btnCaption="Назад" />
+      <CardsList cards={filteredCards} />
+      <BottomNav
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        btnOptions="search"
+        btnCaption="Назад"
+      />
     </>
   )
 }
