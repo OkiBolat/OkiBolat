@@ -7,19 +7,20 @@ import { getCardsThunk } from "store/Home/actionCreators";
 import {favoritesCardsSelector } from "store/Home/selectors";
 
 const Favorites = () => {
-  const filter = ["Новинки", "Хит", "Крепкие", "Сладкие", "Лонг", "Шот"]
 
   const dispatch = useDispatch()
-
+  const isLoading = useSelector((state) => state.products.requestInProgress)
   const cards = useSelector(favoritesCardsSelector)
+  const filter = useSelector((state) => state.products.filter)
 
   useEffect(() => {
     dispatch(getCardsThunk())
   }, [dispatch])
+
   return(
     <>
     <Header  tabs={filter} title="Избранное" />
-    <CardsList cards={cards} />
+    <CardsList isLoading={isLoading} cards={cards} />
     <BottomNav btnOptions="" btnCaption="Назад" />
     </>
   )

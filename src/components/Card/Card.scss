@@ -1,12 +1,23 @@
+a {
+  display: inline-block;
+  text-decoration: none;
+}
 .card {
   cursor: pointer;
   width: 320px;
   height: 421px;
   background: transparent;
   border-radius: 32px;
+  transition: 0.2s;
+  background-repeat:no-repeat;
+  background-size:cover;
+
+  &:hover {
+    transform: scale(1.00999);
+  }
 
   &__header {
-    margin: 18px;
+    padding: 18px;
     display: flex;
     justify-content: space-between;
 
@@ -19,7 +30,7 @@
       height: 80px;
       background-color: #0E0D13;
       border-radius: 24px;
-      
+
 
       h1 {
         color: white;
@@ -42,22 +53,25 @@
 
       }
     }
+
     &-favorites-btn {
-      margin-top: -19px;
-      margin-right: 32px;
+      margin-top: -22px;
+      margin-right: 9px;
       cursor: pointer;
-      border:none;
+      border: none;
       width: 20px;
       height: 32px;
-      background-color:transparent;
+      background-color: transparent;
       background-repeat: no-repeat;
       transition: 0.3s;
+
       &:hover {
         transform: scale(1.3)
       }
-      
+
     }
   }
+
   &__name {
     display: flex;
     flex-direction: column;

@@ -8,11 +8,11 @@ import Header from "components/Header/Header";
 import BottomNav from "../../components/BottomNav/BottomNav.jsx";
 
 const Home = () => {
-  const filter = ["Новинки", "Хит", "Крепкие", "Сладкие", "Лонг", "Шот"]
-  const pageTitle = useSelector(isSearchedSelector) ? "Поиск" : "Главная";
-
   const dispatch = useDispatch()
-
+  
+  const filter = useSelector(state => state.products.filter)
+  const pageTitle = useSelector(isSearchedSelector) ? "Поиск" : "Главная";
+  const isLoading = useSelector((state) => state.products.requestInProgress)
   const cards = useSelector(cardsSelector)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <>
       <Header title={pageTitle} tabs={filter} />
-      <CardsList cards={cards} />
+      <CardsList isLoading={isLoading} cards={cards} />
       <BottomNav btnOptions="favorites" btnCaption="Избранное" />
     </>
   )
