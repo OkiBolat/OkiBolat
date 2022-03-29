@@ -9,7 +9,7 @@ import BottomNav from "../../components/BottomNav/BottomNav.jsx";
 
 const Home = () => {
   const dispatch = useDispatch()
-  
+
   const filter = useSelector(state => state.products.filter)
   const pageTitle = useSelector(isSearchedSelector) ? "Поиск" : "Главная";
   const isLoading = useSelector((state) => state.products.requestInProgress)

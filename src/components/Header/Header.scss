@@ -1,22 +1,23 @@
 .header {
   min-width: 320px;
+  max-height: 208px;
   position: sticky;
   top: 0;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 5%, rgba(32, 31, 46, 1) 25%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(32, 31, 46, 1) 19%);
   z-index: 2;
 
-  &__up {
+  .upper-block {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
-    &-name {
+    &__text {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
       margin: 25px 0 0 32px;
+      padding: 8px 0 0 0;
       color: #FFFFFF;
 
       h1 {
@@ -34,8 +35,9 @@
     }
   }
 
-  &__filter {
-    height: 100px;
+  .filter {
+    // height: 100px;
+    margin-top: -28px;
     width: 100%;
     overflow: hidden;
     overflow-x: initial;
@@ -44,39 +46,41 @@
       display: none;
     }
 
-    &-list {
+    &__list {
       display: flex;
       align-items: center;
       list-style: none;
       color: #C4C1CF;
       font-size: 18px;
       font-weight: 300;
+      &:first-child {
+        margin-left: 0px;
+        padding-left: 5px;
+      }
 
-      &-item {
-        margin-left: 10px;
+      
+    }
+    .filter__item {
+      margin-left: 23px;
+      cursor: pointer;
+      width: 109;
+      height: 30;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      border-radius: 32px;
+      padding: 10px 20px;
+      transition: 0.2s; 
+      &:hover {
+        border-color: #C4C1CF;
+      }
+      &:active {
         cursor: pointer;
-        width: 109;
-        height: 30;
-        border: 1px solid transparent;
+        border: 1px solid #C4C1CF;
         box-sizing: border-box;
         border-radius: 32px;
-        padding: 10px 23px;
         transition: 0.2s; 
-        &:hover {
-          border-color: #C4C1CF;
-        }
-        &:active {
-          cursor: pointer;
-          width: 109;
-          height: 30;
-          border: 1px solid #C4C1CF;
-          box-sizing: border-box;
-          border-radius: 32px;
-          padding: 10px 23px;
-          transition: 0.2s; 
-        }
-      
       }
+    
     }
   }
 }

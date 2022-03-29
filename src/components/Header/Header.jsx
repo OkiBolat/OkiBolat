@@ -21,22 +21,22 @@ const Header = ({tabs, title }) => {
 
   return (
     <header className="header">
-      <div className="header__up">
-        <div className="header__up-name">
+      <div className="upper-block">
+        <div className="upper-block__text">
           <h1>{title}</h1>
-          <h3 className="header__up-name-date">17 июля 2022</h3>
+          <h3 className="upper-block__date">17 июля 2022</h3>
         </div>
-        <div className="header__up-logo">
+        <div className="upper-block__logo">
           <img src={logo} alt="logo" />
         </div>
       </div>
-      <div className="header__filter">
-        <ul className="header__filter-list">
+      <div className="filter">
+        <ul className="filter__list">
           {tabs.map(item =>
             <li key={item.value} onClick={() => addFilter(item.label)}
-              on
               className={activeTag !== item.label ?
-                "header__filter-list-item" : "header__filter-list-item active"}>
+                "filter__item" : "filter__item active"}
+                >
               {item.label}</li>)}
         </ul>
       </div>
