@@ -30,7 +30,7 @@ const Card = ({image, discount, id, isFavorite, card, name}) => {
       name !== "Нет результатов"? <Link style={{height: "432px"}}  to={"/detailed/" + id}>
         <div style={{ backgroundImage: `url(${imgMap[image]})` }} className="card">
           <div className="card__header">
-            <div className="card__header-info">
+            <div className="card__info">
               <h1>{discount}</h1>
               <p>{name}</p>
             </div>

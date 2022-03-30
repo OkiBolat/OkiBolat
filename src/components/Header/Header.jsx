@@ -16,7 +16,6 @@ const Header = ({tabs, title }) => {
       dispatch(getCardsByFilter(tag))
       setActiveTag(tag)
     }
-
   }
 
   return (
@@ -35,7 +34,7 @@ const Header = ({tabs, title }) => {
           {tabs.map(item =>
             <li key={item.value} onClick={() => addFilter(item.label)}
               className={activeTag !== item.label ?
-                "filter__item" : "filter__item active"}
+                "filter__item" : "filter__item-active"}
                 >
               {item.label}</li>)}
         </ul>

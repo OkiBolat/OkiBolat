@@ -4,10 +4,10 @@ import background from 'assets/image/background.png'
 import anismelk from 'assets/image/anismelk.jpg'
 import glegy from 'assets/image/glegi.jpg'
 import myatnychai from 'assets/image/myatnychai.jpg'
-import "./Detailed.scss"
 import { useDispatch, useSelector } from "react-redux"
 import { getDetailedCardThunk } from "store/Home/actionCreators"
 import { useParams } from "react-router-dom"
+import "./Detailed.scss"
 
 const Detailed = (props) => {
 

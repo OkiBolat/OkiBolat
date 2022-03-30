@@ -1,10 +1,10 @@
 import React from "react";
-import Home from "pages/Home/Home.jsx";
+import Home from "./pages/Home/Home.jsx";
 import "./App.css"
-import Detailed from "pages/Detailed/Detailed";
+import Detailed from "./pages/Detailed/Detailed.jsx";
 import { Route, Routes } from "react-router";
-import Search from "pages/Search/Search";
-import Favorites from "pages/Favorites/Favorites";
+import Search from "./pages/Search/Search.jsx";
+import Favorites from "./pages/Favorites/Favorites.jsx";
 
 function App() {
 
