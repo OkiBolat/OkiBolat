@@ -3,10 +3,15 @@ import logo from "assets/sprites/logo.svg"
 import "./Header.scss"
 import { useDispatch } from "react-redux";
 import { getCardsByFilter } from "store/Home/actionCreators";
+import { cn } from "assets/bem";
+
+const upprerBlock = cn("upper-block")
+const filter = cn("filter")
 
 const Header = ({tabs, title }) => {
   const [activeTag, setActiveTag] = useState(null)
   const dispatch = useDispatch()
+
 
   const addFilter = (tag) => {
     if (activeTag === tag) {
@@ -20,26 +25,27 @@ const Header = ({tabs, title }) => {
 
   return (
     <header className="header">
-      <div className="upper-block">
-        <div className="upper-block__text">
+      <div className={upprerBlock()}>
+        <div className={upprerBlock("text")}>
           <h1>{title}</h1>
-          <h3 className="upper-block__date">17 июля 2022</h3>
+          <h3 className={upprerBlock("date")}>17 июля 2022</h3>
         </div>
-        <div className="upper-block__logo">
+        <div className={upprerBlock("logo")}>
           <img src={logo} alt="logo" />
         </div>
       </div>
-      <div className="filter">
-        <ul className="filter__list">
+      <div className={filter()}>
+        <ul className={filter("list")}>
           {tabs.map(item =>
             <li key={item.value} onClick={() => addFilter(item.label)}
               className={activeTag !== item.label ?
-                "filter__item" : "filter__item-active"}
+                filter("item") : filter("item-active")}
                 >
               {item.label}</li>)}
         </ul>
       </div>
     </header>
+    
   )
 }
 

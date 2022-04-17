@@ -1,4 +1,4 @@
-.main {
+.main__container {
   display: flex;
   justify-content:flex-start;
   flex-wrap: wrap;
@@ -7,4 +7,7 @@
   column-gap: 32px;
   margin-bottom: 120px;
   padding: 0 32px 0;
+  @media (max-width:1056px) {
+    justify-content: center;
+  }
 }

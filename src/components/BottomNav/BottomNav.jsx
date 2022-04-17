@@ -5,6 +5,9 @@ import "./BottomNav.scss"
 import { useDispatch } from "react-redux";
 import { searchCard } from "store/Home/actionCreators";
 import Button from "components/Button/Button";
+import { cn } from "assets/bem";
+
+const bar = cn("bar")
 
 const BottomNav = ({ btnCaption, btnOptions }) => {
 
@@ -23,24 +26,24 @@ const BottomNav = ({ btnCaption, btnOptions }) => {
   }
 
   return (
-    <footer className="bar">
+    <footer className={bar()}>
       {isSearchOpern ?
-        <div className="bar__search-box">
-          <div className="bar__input">
+        <div className={bar("search-box")}>
+          <div className={bar("input")}>
             <input
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               spellCheck={false}
               onBlur={() => onSearchCard()}
               type="text"
-              className="bar__search-input"
+              className={bar("search-input")}
               placeholder="Названиe..." />
             <img onClick={() => closeInput()} src={closeBtn} alt="" />
           </div>
         </div>
         :
-        <div className="bar__search-box">
-          <div className="bar__button">
+        <div className={bar("search-box")}>
+          <div className={bar("button")}>
               <Button btnCaption={btnCaption} btnOptions={btnOptions} ></Button>
             <img onClick={() => setIsSearchOpen(true)} src={searchBtn} alt="" />
           </div>

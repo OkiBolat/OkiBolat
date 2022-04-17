@@ -7,7 +7,6 @@ import Search from "./pages/Search/Search.jsx";
 import Favorites from "./pages/Favorites/Favorites.jsx";
 
 function App() {
-
   return (
     <div className="container">
       <Routes>
@@ -17,8 +16,12 @@ function App() {
         <Route path='/favorites' element={<Favorites />} />
       </Routes>
     </div>
-
   )
 }
 
 export default App;
+
+
+
+
+
