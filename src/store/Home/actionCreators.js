@@ -1,36 +1,5 @@
 import { cardsService } from "services/cards.service";
-import { GET_CARDS, GET_CARDS_BY_FILTER, SEARCH_CARD, SET_DETAILED_CARD, SET_IS_LOADING_PROGRESS, SWITCH_CARD_FAVORITE } from "./actions";
-
-export const getCards = (payload) => ({
-  type: GET_CARDS,
-  payload
-});
-
-export const switchCardFavorite = (payload) => ({
-  type: SWITCH_CARD_FAVORITE,
-  payload
-});
-
-
-export const searchCard = (payload) => ({
-  type: SEARCH_CARD,
-  payload
-})
-
-export const setIsLoadingProgress = (payload) => ({
-  type: SET_IS_LOADING_PROGRESS,
-  payload
-})
-
-export const setDetailedCard = (payload) => ({
-  type: SET_DETAILED_CARD,
-  payload
-})
-
-export const getCardsByFilter = (payload) => ({
-  type: GET_CARDS_BY_FILTER,
-  payload
-})
+import { getCards, setDetailedCard, setIsLoadingProgress, switchCardFavorite } from "./reducer";
 
 export const getCardsThunk = () => {
   return (dispatch) => {

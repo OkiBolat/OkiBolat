@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import logo from "assets/sprites/logo.svg"
 import "./Header.scss"
 import { useDispatch } from "react-redux";
-import { getCardsByFilter } from "store/Home/actionCreators";
+// import { getCardsByFilter } from "store/Home/actionCreators";
 import { cn } from "assets/bem";
+import { getCardsByFilter } from "store/Home/reducer";
 
 const upprerBlock = cn("upper-block")
 const filter = cn("filter")

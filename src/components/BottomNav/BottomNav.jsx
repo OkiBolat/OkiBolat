@@ -3,9 +3,10 @@ import searchBtn from "assets/sprites/searchBtn.svg"
 import closeBtn from "assets/sprites/closeBtn.svg"
 import "./BottomNav.scss"
 import { useDispatch } from "react-redux";
-import { searchCard } from "store/Home/actionCreators";
+// import { searchCard } from "store/Home/actionCreators";
 import Button from "components/Button/Button";
 import { cn } from "assets/bem";
+import { searchCard } from "store/Home/reducer";
 
 const bar = cn("bar")
 

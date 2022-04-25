@@ -8,6 +8,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { getDetailedCardThunk } from "store/Home/actionCreators"
 import { useParams } from "react-router-dom"
 import "./Detailed.scss"
+import { cn } from "assets/bem"
+
+const detaile = cn('detaile')
 
 const Detailed = (props) => {
 
@@ -30,9 +33,9 @@ const Detailed = (props) => {
   const image = detailedCard.image
 
   return (
-    <div className="detaile">
-      <div style={{ backgroundImage: `URL(${imgMap[image]})` }} className="detaile__image">
-        <button onClick={() => history.back()} className="detaile__button">
+    <div className={detaile()}>
+      <div style={{ backgroundImage: `URL(${imgMap[image]})` }} className={detaile("image")}>
+        <button onClick={() => history.back()} className={detaile("button")}>
           <svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.383924 11.0671L11.0016 0.386228C11.5135 -0.128743 12.3439 -0.128743 12.8558 0.386228L14.0943 
             1.63216C14.6056 2.14658 14.6062 2.97977 14.0965 3.49529L5.68155 11.9997L14.0959 20.5047C14.6062 21.0202
@@ -41,11 +44,11 @@ const Detailed = (props) => {
           </svg>
         </button>
       </div>
-      <div style={{ backgroundImage: `URL(${background})` }} className="detaile__info">
+      <div style={{ backgroundImage: `URL(${background})` }} className={detaile("info")}>
         <h2>{detailedCard.name}</h2>
         <p>Освежающий напиток</p>
         <h2>Ингредиенты</h2>
-        <ul className="detaile__ingredients">
+        <ul className={detaile("ingredients")}>
           {detailedCard.recipe && Object.keys(detailedCard.recipe).map(item => (
             <li key={item} className="">
               <span className="text">{item}</span>
@@ -55,7 +58,7 @@ const Detailed = (props) => {
         </ul>
 
         <h2>Как готовить</h2>
-        <p>{detailedCard.description}</p>
+        <p className={detaile("description")}>{detailedCard.description}</p>
       </div>
     </div>
   )

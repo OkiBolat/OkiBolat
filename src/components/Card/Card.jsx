@@ -11,7 +11,7 @@ import anismelk from "../../assets/image/anismelk.jpg"
 import noResult from "../../assets/image/noResult.png"
 import { cn } from "assets/bem";
 
-
+const cardBem = cn("card")
 
 const Card = ({image, discount, id, isFavorite, card, name}) => {
   const dispatch = useDispatch()
@@ -22,7 +22,6 @@ const Card = ({image, discount, id, isFavorite, card, name}) => {
     dispatch(switchCardFavoriteThunk(card))
   }
 
-const cardBem = cn("card")
   const imgMap = {
     anismelk,
     myatnychai,
