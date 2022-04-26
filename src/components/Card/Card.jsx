@@ -3,13 +3,14 @@ import './Card.scss'
 import favorBtn from "assets/sprites/favorBtn.svg"
 import favorBtnWhite from "assets/sprites/favorBtnWhite.svg"
 import { useDispatch } from "react-redux";
-import { switchCardFavoriteThunk } from "store/Home/actionCreators";
+// import { switchCardFavoriteThunk } from "store/Home/actionCreators";
 import { Link } from "react-router-dom";
 import glegy from "../../assets/image/glegi.jpg"
 import myatnychai from "../../assets/image/myatnychai.jpg"
 import anismelk from "../../assets/image/anismelk.jpg"
 import noResult from "../../assets/image/noResult.png"
 import { cn } from "assets/bem";
+import { switchCardFavoriteThunk } from "store/Home/actionCreators";
 
 const cardBem = cn("card")
 

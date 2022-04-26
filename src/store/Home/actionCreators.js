@@ -1,28 +1,20 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import { cardsService } from "services/cards.service";
-import { getCards, setDetailedCard, setIsLoadingProgress, switchCardFavorite } from "./reducer";
 
-export const getCardsThunk = () => {
-  return (dispatch) => {
-    dispatch(setIsLoadingProgress(true))
-    cardsService.getCards().then(res => {
-      dispatch(getCards(res.data))
-    }).then(() => dispatch(setIsLoadingProgress(false)))
-  }
-}
 
-export const getDetailedCardThunk = (id) => {
-  return (dispatch) => {
-    dispatch(setIsLoadingProgress(true))
-    cardsService.getCard(id).then(res => {
-      dispatch(setDetailedCard(res.data))
-    }).then(() => dispatch(setIsLoadingProgress(false)))
-  }
-}
+export const getCardsThunk = createAsyncThunk("products/cards", async function () {
+  const response = await cardsService.getCards();
+  const data = await response.data
+  return data;
+})
 
-export const switchCardFavoriteThunk = (obj) => {
-  return (dispatch) => {
-    cardsService.update({...obj, isFavorite: !obj.isFavorite}).then(res => {
-      dispatch(switchCardFavorite(res.data))
-    })
-  }
-}
+export const getDetailedCardThunk = createAsyncThunk("products/detailed", async function (id) {
+  const resp = await cardsService.getCard(id)
+  const data = resp.data
+  return data
+})
+
+export const switchCardFavoriteThunk = createAsyncThunk("products/switchFav", async (obj) => {
+  const resp = await cardsService.update({ ...obj, isFavorite: !obj.isFavorite })
+  return resp.data
+})

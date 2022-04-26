@@ -5,14 +5,14 @@ import anismelk from 'assets/image/anismelk.jpg'
 import glegy from 'assets/image/glegi.jpg'
 import myatnychai from 'assets/image/myatnychai.jpg'
 import { useDispatch, useSelector } from "react-redux"
-import { getDetailedCardThunk } from "store/Home/actionCreators"
 import { useParams } from "react-router-dom"
-import "./Detailed.scss"
-import { cn } from "assets/bem"
+import { cn } from "assets/bem";
+import { getDetailedCardThunk } from "store/Home/actionCreators";
+import "./Detailed.scss";
 
 const detaile = cn('detaile')
 
-const Detailed = (props) => {
+const Detailed = () => {
 
   const imgMap = {
     anismelk,
@@ -56,7 +56,6 @@ const Detailed = (props) => {
             </li>
           ))}
         </ul>
-
         <h2>Как готовить</h2>
         <p className={detaile("description")}>{detailedCard.description}</p>
       </div>
