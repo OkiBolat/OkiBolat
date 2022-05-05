@@ -24,11 +24,11 @@ const Search = () => {
     .includes(searchValue
       .toLowerCase())),
     [cards, searchValue])
-
+   
   return (
     <>
       <Header tabs={filter} title="Поиск" />
-      <CardsList cards={filteredCards} />
+      <CardsList cards={filteredCards}  />
       <BottomNav
         searchValue={searchValue}
         setSearchValue={setSearchValue}

@@ -41,10 +41,16 @@ const Card = ({image, discount, id, isFavorite, card, name}) => {
             {}
             <button onClick={(e) => switchFavorite(e, card)} style={{ backgroundImage: `url(${isFavorite ? favorBtn : favorBtnWhite})` }} className={cardBem("header-favorites-btn")} />
           </div>
-          <div className={cardBem("name")}>
+          <div className={cardBem("footer")}>
+            <p className={cardBem("name")}>
+              {name}
+            </p>
+            <p className={cardBem("info")}>Напиток</p>
+            
           </div>
         </div>
-      </Link> : 
+      </Link>
+       : 
         <div style={{ backgroundImage: `url(${noResult})`, justifyContent: "center"}} className={cardBem()}>
           <div>
             <h1 style={{color: "#ffffff"}}>Нет результатов</h1>
