@@ -22,6 +22,7 @@ const Card = ({image, discount, id, isFavorite, card, name}) => {
     e.preventDefault()
     dispatch(switchCardFavoriteThunk(card))
   }
+  
 
   const imgMap = {
     anismelk,
@@ -52,4 +53,4 @@ const Card = ({image, discount, id, isFavorite, card, name}) => {
   )
 }
 
-export default Card
+export default React.memo(Card) 

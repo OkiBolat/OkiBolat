@@ -29,7 +29,7 @@ const Header = ({tabs, title }) => {
       <div className={upprerBlock()}>
         <div className={upprerBlock("text")}>
           <h1>{title}</h1>
-          <h3 className={upprerBlock("date")}>17 июля 2022</h3>
+          <h3 className={upprerBlock("date")}>{new Date().toDateString()}</h3>
         </div>
         <div className={upprerBlock("logo")}>
           <img src={logo} alt="logo" />

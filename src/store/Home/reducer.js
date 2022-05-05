@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { createAsyncThunk, createReducer, createSlice } from "@reduxjs/toolkit";
-import { cardsService } from "services/cards.service";
+import {createSlice } from "@reduxjs/toolkit";
 import { getCardsThunk, getDetailedCardThunk, switchCardFavoriteThunk } from "./actionCreators";
 
 const toolkitSlice = createSlice({

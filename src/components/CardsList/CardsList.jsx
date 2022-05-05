@@ -8,6 +8,7 @@ const main = cn("main")
 
 const CardsList = ({ cards, isLoading }) => {
 
+
   const noResultCard = {
     name: "Нет товара",
     id: 12313,
@@ -46,5 +47,5 @@ const CardsList = ({ cards, isLoading }) => {
   )
 }
 
-export default CardsList;
+export default React.memo(CardsList)
 

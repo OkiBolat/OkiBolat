@@ -54,4 +54,4 @@ const BottomNav = ({ btnCaption, btnOptions }) => {
   )
 }
 
-export default BottomNav;
+export default BottomNav; 
