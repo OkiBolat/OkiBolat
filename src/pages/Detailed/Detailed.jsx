@@ -45,9 +45,11 @@ const Detailed = () => {
         </button>
       </div>
       <div style={{ backgroundImage: `URL(${background})` }} className={detaile("info")}>
-        <h2>{detailedCard.name}</h2>
-        <p>Освежающий напиток</p>
-        <h2>Ингредиенты</h2>
+        <div className="detaile__title">
+          <p className={detaile("name")}>{detailedCard.name}</p>
+          <p className={detaile("category")}>Освежающий напиток</p>
+        </div>
+        <h2 className={detaile("ingredients-title")}>Ингредиенты</h2>
         <ul className={detaile("ingredients")}>
           {detailedCard.recipe && Object.keys(detailedCard.recipe).map(item => (
             <li key={item} className="">
