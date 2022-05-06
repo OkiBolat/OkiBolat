@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/OkiBolat/static/css/main.d8af2ff6.css",
-    "main.js": "/OkiBolat/static/js/main.a850f03d.js",
+    "main.css": "/OkiBolat/static/css/main.1936fc06.css",
+    "main.js": "/OkiBolat/static/js/main.da475296.js",
     "static/media/noResult.png": "/OkiBolat/static/media/noResult.6a1cffb8743957758efc.png",
     "static/media/myatnychai.jpg": "/OkiBolat/static/media/myatnychai.49ca57d20b46fb6f4043.jpg",
     "static/media/glegi.jpg": "/OkiBolat/static/media/glegi.5b1cf0ffefbcdf4d4cc9.jpg",
@@ -12,11 +12,11 @@
     "static/media/searchBtn.svg": "/OkiBolat/static/media/searchBtn.9113df689bb90a71c9fbc7175b0430ab.svg",
     "static/media/favorBtn.svg": "/OkiBolat/static/media/favorBtn.32a2c0eefa424919b205ca82d81d96c7.svg",
     "static/media/favorBtnWhite.svg": "/OkiBolat/static/media/favorBtnWhite.01e4ffa743e3c7af3c68f965859f2ee5.svg",
-    "main.d8af2ff6.css.map": "/OkiBolat/static/css/main.d8af2ff6.css.map",
-    "main.a850f03d.js.map": "/OkiBolat/static/js/main.a850f03d.js.map"
+    "main.1936fc06.css.map": "/OkiBolat/static/css/main.1936fc06.css.map",
+    "main.da475296.js.map": "/OkiBolat/static/js/main.da475296.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8af2ff6.css",
-    "static/js/main.a850f03d.js"
+    "static/css/main.1936fc06.css",
+    "static/js/main.da475296.js"
   ]
 }
