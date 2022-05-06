@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router";
 import Favorites from "./pages/Favorites/Favorites.jsx";
 
 function App() {
+
   return (
     <div className="container">
       <Routes>
@@ -18,8 +19,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
