@@ -14,32 +14,27 @@ const CardsList = ({ cards, isLoading }) => {
     image: "noResult"
   }
 
-  if (!cards.length) {
-    return (
-      <div className={main()}>
-        <div className={main("container")}>
-          <Card
-            card={noResultCard}
-            image={"noResult"}
-            name="Нет результатов"
-            id={2131}
-          ></Card>
-        </div>
-      </div>
-    )
-  }
   return (
     <main className={main()}>
-      <div className={main("container")}>{isLoading ? renderSkeletone() :
-        cards?.map(card => (
-          <Card key={card.id}
-            name={card.name}
-            discount={card.discount}
-            image={card.image}
-            isFavorite={card.isFavorite}
-            id={card.id}
-            card={card} />))
-      }
+      <div className={main("container")}>
+        {isLoading ? renderSkeletone() :
+          !cards.length ?
+            <Card
+              card={noResultCard}
+              name={noResultCard.name}
+              id={2131}
+            ></Card>
+            :
+            cards.map(card => (
+              <Card key={card.id}
+                name={card.name}
+                discount={card.discount}
+                image={card.image}
+                isFavorite={card.isFavorite}
+                id={card.id}
+                card={card} />)
+            )
+        }
       </div>
     </main>
 
